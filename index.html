@@ -107,51 +107,50 @@
             color: #555;
         }
 
-        /* Profile Section */
-        /* #profile img {
-            width: 100%;
-            max-width: 350px;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 2rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            animation: zoomIn 1s ease-in-out;
-        } */
-
         /* Profile Section Styling */
 #profile {
     display: flex;
+    flex-direction: column; /* Default for mobile devices */
     height: 100vh;
     margin: 0;
     padding: 0;
 }
 
-/* Parallax Scrolling Effect for Image */
+.image-container, .text-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 .image-container img {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%; /* Ensure image adjusts to container size */
+    height: auto;
     transform: translateY(0);
     transition: transform 0.3s ease-out;
     will-change: transform;
 }
 
-/* Adjust Image on Scroll */
-.image-container {
-    position: relative;
-    height: 100vh;
+/* Responsive Adjustments for Large Devices */
+@media (min-width: 768px) {
+    #profile {
+        flex-direction: row; /* Align columns for larger screens */
+    }
+    .image-container, .text-container {
+        flex: 1; /* Equal space for both sections */
+    }
 }
 
-.image-container img {
-    will-change: transform;
-}
-
+/* General Body Reset */
 body {
     margin: 0;
     padding: 0;
 }
-
-
 
         /* Skills Section */
         #skills {
