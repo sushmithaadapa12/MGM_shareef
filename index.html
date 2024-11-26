@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MGM Shareeff - Empowering businesses and individuals through coaching, innovation, and leadership. Explore my professional portfolio.">
+    <meta name="keywords" content="MGM Shareeff, Professional Portfolio, Coaching, Innovation, Leadership, Business, Health">
+    <meta name="author" content="MGM Shareeff">
+    <title>MGM Shareeff - Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif !important;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 900 !important;
+            animation: fadeIn 1s ease-in !important;
+            font-size: 1.3rem !important;
+            font-family: 'Roboto', sans-serif !important;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+        }
+
+        /* Header Section */
+        header {
+            background: #1d3557;
+            color: #f4f4f4;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: zoomIn 0.5s ease-in-out;
+        }
+
+        header p {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+            color: #f4f4f4;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background: #1d3557;
+            padding: 0.7rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #f4f4f4;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #e8c547;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 3rem 0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #1d3557;
+        }
+
+        section p {
+            text-align: center;
+            color: #555;
+        }
+
+        /* Profile Section */
+        /* #profile img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: zoomIn 1s ease-in-out;
+        } */
+
+        /* Profile Section Styling */
+#profile {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Parallax Scrolling Effect for Image */
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+}
+
+/* Adjust Image on Scroll */
+.image-container {
+    position: relative;
+    height: 100vh;
+}
+
+.image-container img {
+    will-change: transform;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+        /* Skills Section */
+        #skills {
+            background: #f4f4f4;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .skills-grid div {
+            transition: transform 0.3s;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .skills-grid div:hover {
+            transform: scale(1.05);
+        }
+
+        .skills-grid i {
+            font-size: 3rem;
+            color: #1d3557;
+            margin-bottom: 1rem;
+        }
+
+        .skills-grid h3 {
+            color: #1d3557;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #1d3557;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        #contact .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+            animation: fadeInLeft 0.5s ease;
+        }
+
+        #contact .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #e8c547;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #1d3557;
+            color: #f4f4f4;
+            padding: 1rem 0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .cert-item {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .cert-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .cert-item i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-item h3 {
+            color: #1d3557;
+            margin: 1rem 0 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: #2a2d34;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 0.7s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #e8c547;
+        }
+
+        .contact-card h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: #e8c547;
+        }
+
+        /* Footer */
+        footer {
+            background: #1d3557;
+            color: #f4f4f4;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            color: #e8c547;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #f4f4f4;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="text-white py-5">
+        <i class="fas fa-user-tie mr-2" style="color: #e8c547;"></i>
+        <h1 class="display-4">MGM Shareeff</h1>
+        <p class="lead">
+            <strong>Engineer</strong> <i class="fas fa-graduation-cap mr-2" style="color: #e8c547;"></i> |
+            <strong>Entrepreneur</strong> <i class="fas fa-briefcase mr-2" style="color: #e8c547;"></i> |
+            <strong>Business & Health Coach</strong> <i class="fas fa-coach mr-2" style="color: #e8c547;"></i>
+        </p>
+        <div class="p-3 rounded d-flex flex-column align-items-center">
+            <i class="fas fa-home mr-2" style="color: #e8c547;"></i>
+            <p class="lead"><strong>Welcome to my professional portfolio.</strong></p>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Shareeff</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <!-- Profile Section -->
+    <section id="profile" class="container-fluid d-flex " style="background:#b9b5b5">
+        <!-- Image Section -->
+        <div class="image-container" style="flex: 1; position: relative; overflow: hidden;">
+            <img src="profile.png" class="img-fluid" style="width: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" alt="MGM Shareeff">
+        </div>
+
+        <!-- Text Content Section -->
+        <div class="col-md-6 d-flex flex-column justify-content-center" style="background: linear-gradient(to bottom, #ffecb3, white); flex: 1; padding: 20px; ">
+            <h2 class="text-center"><i class="fas fa-user-tie mr-2"></i>About Me</h2>
+            <p class="lead text-center">
+                As a multifaceted professional, I have a unique blend of engineering, entrepreneurial, and business &
+                health coaching experience. With a foundation in engineering, I leverage my expertise to help
+                individuals and businesses reach their full potential. I am passionate about empowering people and
+                businesses by providing innovative solutions and guidance.
+            </p>
+
+            <!-- Present Positions Section -->
+            <section id="positions" class="my-2 py-2 bg-dark text-white">
+                <div class="container">
+                    <h3 class="section-heading text-center mb-4">Present Positions</h3>
+                    <ul class="list-unstyled text-center">
+                        <li class="mb-2"><i class="fas fa-cogs mr-2"></i>Executive Director For ZP - 2024</li>
+                        <li class="mb-2"><i class="fas fa-user-tie mr-2"></i>JCOM Coach</li>
+                        <li class="mb-2"><i class="fas fa-users mr-2"></i>JCOM Chairman - JCOM L Rajahmundry 4.O</li>
+                        <li class="mb-2"><i class="fas fa-calendar-alt mr-2"></i>Advisor - Zone Conference 2024</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+     <!-- Introduction Section -->
+    <section id="about-mgm-shareeff" class="col-md-12" style="background-image: url('bg.jpg'); background-size: cover; padding: 5rem 0; position: relative;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="content-box p-5 text-justify" style="background: rgba(255, 255, 255, 0.85); border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
+                        <h2 class="text-center mb-4" style="font-size: 2.5rem; font-weight: 600;">Introduction - M G M Shareeff</h2>
+                        <p class="mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                            I'm <strong>M G M Shareeff</strong>, a professional with expertise in engineering, entrepreneurship, and business & health coaching. My journey began with a solid foundation in engineering, which led me to build and manage successful ventures such as <em>Z IT Service</em>, providing after-sales service to brands like Lenovo and Dell.
+                        </p>
+                        <p class="mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                            Passionate about helping others, I dedicate much of my time to business and health coaching. I aim to empower aspiring entrepreneurs to unlock their potential, which is why I wrote my book, <em>"Rapid Business Accelerator: Unlock the Secret of Entrepreneurial Success"</em>.
+                        </p>
+                        <p class="mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                            I'm also an active member of <strong>Junior Chamber International (JCI)</strong> and serve as Executive Director for ZP. In this role, I lead community initiatives to foster development and strengthen JCI's impact.
+                        </p>
+                        <p class="mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                            My approach to coaching focuses on balancing professional success with personal well-being. I believe in driving business growth while promoting a healthy lifestyle, ensuring sustainable success for my clients.
+                        </p>
+                        <p class="mb-0" style="font-size: 1.1rem; line-height: 1.8;">
+                            As an engineer, entrepreneur, author, and coach, I strive to innovate, lead, and serve. My work continues to inspire individuals to achieve new heights in both their personal and professional lives.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Skills Section -->
+    <section id="skills" style="background-image: linear-gradient(to left, #e8c547, #f4f4f4);">
+        <div class="container">
+            <h2 style="display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-graduation-cap" style="font-size: 2.5rem; margin-right: 1rem; color: #1d3557;"></i>
+                Skills
+            </h2>
+            <div class="skills-grid">
+                <div>
+                    <i class="fas fa-business-time" style="color: #1d3557;"></i>
+                    <h3>Management</h3>
+                </div>
+                <div>
+                    <i class="fas fa-laptop-code" style="color: #1d3557;"></i>
+                    <h3>Digital Marketing</h3>
+                </div>
+                <div>
+                    <i class="fas fa-speech-bubble" style="color: #1d3557;"></i>
+                    <h3>Communication</h3>
+                </div>
+                <div>
+                    <i class="fas fa-brain" style="color: #1d3557;"></i>
+                    <h3>Critical Thinking</h3>
+                </div>
+                <!-- <div>
+                    <i class="fas fa-handshake" style="color: #1d3557;"></i>
+                    <h3>Negotiation</h3>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" style="background-image: linear-gradient(to right, #061b3a, #f4f4f4);">
+        <div class="container">
+            <h2 style="display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-medal" style="font-size: 2.5rem; margin-right: 1rem; color: #e8c547;"></i>
+                Certifications & Achievements
+            </h2>
+            <div class="certifications-grid">
+                <div class="cert-item">
+                    <i class="fas fa-user-tie" style="color: #e8c547;"></i>
+                    <h3>JCI Senator Title</h3>
+                    <p>Awarded in 2021 for leadership excellence in JCI India.</p>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-chalkboard-teacher" style="color: #e8c547;"></i>
+                    <h3>Zone Trainer</h3>
+                    <p>Certified by JCI India for advanced training facilitation.</p>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-graduation-cap" style="color: #e8c547;"></i>
+                    <h3>JCOM Coach</h3>
+                    <p>Certified by JCI India for effective business coaching.</p>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-trophy" style="color: #e8c547;"></i>
+                    <h3>Super Coach</h3>
+                    <p>Specialized in Business and Health Coaching practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 style="color: #e8c547;">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p style="color: #fff;"><a href="mailto:mgmshareeff@gmail.com">mgmshareeff@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>Phone</h4>
+                    <p style="color: #fff;"><a href="tel:+919885507744">+91 9885507744</a></p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Address</h4>
+                    <p style="color: #fff;">46-16-49/1, Danavaipeta, Rajahmundry - 533103</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3 style="color: #e8c547;">MGM Shareeff</h3>
+                <p>Empowering businesses and individuals through coaching, innovation, and leadership.</p>
+            </div>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 MGM Shareeff | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            document.querySelector('.image-container img').style.transform = `translateY(${scrollY * 0.1}px)`;
+        });
+    </script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+
+</html>
