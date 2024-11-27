@@ -108,49 +108,50 @@
         }
 
         /* Profile Section Styling */
-#profile {
-    display: flex;
-    flex-direction: column; /* Default for mobile devices */
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-}
+        #profile {
+            display: flex;
+            flex-direction: column; /* Default for mobile devices */
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
 
-.image-container, .text-container {
-    flex: 1;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+        .image-container, .text-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            padding: 20px;
+        }
 
-.image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Ensure image adjusts to container size */
-    height: auto;
-    transform: translateY(0);
-    transition: transform 0.3s ease-out;
-    will-change: transform;
-}
+        .image-container img {
+            top: 0;
+            left: 0;
+            width: 100%; /* Ensure image adjusts to container size */
+            height: auto;
+            transform: translateY(0);
+            transition: transform 0.3s ease-out;
+            will-change: transform;
+        }
 
-/* Responsive Adjustments for Large Devices */
-@media (min-width: 768px) {
-    #profile {
-        flex-direction: row; /* Align columns for larger screens */
-    }
-    .image-container, .text-container {
-        flex: 1; /* Equal space for both sections */
-    }
-}
+        /* Responsive Adjustments for Large Devices */
+        @media (min-width: 768px) {
+            #profile {
+                flex-direction: row; /* Align columns for larger screens */
+            }
+            .image-container, .text-container {
+                flex: 1; /* Equal space for both sections */
+                height: 150vh;
+            }
+        }
 
-/* General Body Reset */
-body {
-    margin: 0;
-    padding: 0;
-}
+        /* General Body Reset */
+        body {
+            margin: 0;
+            padding: 0;
+        }
 
         /* Skills Section */
         #skills {
@@ -383,66 +384,58 @@ body {
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header class="text-white py-5">
-        <i class="fas fa-user-tie mr-2" style="color: #e8c547;"></i>
-        <h1 class="display-4">MGM Shareeff</h1>
-        <p class="lead">
-            <strong>Engineer</strong> <i class="fas fa-graduation-cap mr-2" style="color: #e8c547;"></i> |
-            <strong>Entrepreneur</strong> <i class="fas fa-briefcase mr-2" style="color: #e8c547;"></i> |
-            <strong>Business & Health Coach</strong> <i class="fas fa-coach mr-2" style="color: #e8c547;"></i>
-        </p>
-        <div class="p-3 rounded d-flex flex-column align-items-center">
-            <i class="fas fa-home mr-2" style="color: #e8c547;"></i>
-            <p class="lead"><strong>Welcome to my professional portfolio.</strong></p>
-        </div>
-    </header>
-
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Shareeff</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gray" style="position: absolute; top: 0; left: 0; right: 0;">
+        <div class="container-fluid justify-content-end">
+            <button class="navbar-toggler ml-auto bg-dark text-white" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" style="color:white;" href="#profile">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:white;" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:white;" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:white;" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
    <!-- Profile Section -->
-    <section id="profile" class="container-fluid d-flex " style="background:#b9b5b5">
+    <section id="profile" class="container-fluid d-flex " style="background:white; height:100vh;">
         <!-- Image Section -->
-        <div class="image-container" style="flex: 1; position: relative; overflow: hidden;">
-            <img src="profile.png" class="img-fluid" style="width: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" alt="MGM Shareeff">
+        <div class="image-container" style="flex: 1; margin: 0; padding: 0;">
+            <img src="profile.png" class="img-fluid" style="width: 100%;  top: 0; left: 0;" alt="MGM Shareeff">
         </div>
 
         <!-- Text Content Section -->
-        <div class="col-md-6 d-flex flex-column justify-content-center" style="background: linear-gradient(to bottom, #ffecb3, white); flex: 1; padding: 20px; ">
-            <h2 class="text-center"><i class="fas fa-user-tie mr-2"></i>About Me</h2>
-            <p class="lead text-center">
-                As a multifaceted professional, I have a unique blend of engineering, entrepreneurial, and business &
-                health coaching experience. With a foundation in engineering, I leverage my expertise to help
-                individuals and businesses reach their full potential. I am passionate about empowering people and
-                businesses by providing innovative solutions and guidance.
+        <div class="col-md-6 d-flex flex-column justify-content-center" style="background:white; flex: 1; padding: 20px;" id = "textContentSection">
+            <h2 class="text-center text-uppercase mb-4" style="font-weight: bold; color: #1d3557; ">
+                <i class="fas fa-user-tie mr-2"></i>About Me
+            </h2>
+            <p class="lead">
+                <strong>Engineer</strong> <i class="fas fa-graduation-cap mr-2" style="color: #e8c547;"></i> |
+                <strong>Entrepreneur</strong> <i class="fas fa-briefcase mr-2" style="color: #e8c547;"></i> |
+                <strong>Business & Health Coach</strong> <i class="fas fa-coach mr-2" style="color: #e8c547;"></i>
             </p>
-
             <!-- Present Positions Section -->
-            <section id="positions" class="my-2 py-2 bg-dark text-white">
+            <section id="positions" class="my-3 py-3  text-light rounded shadow-sm" style="background-image:linear-gradient(to right, #091b4e, rgb(89, 120, 185));">
                 <div class="container">
-                    <h3 class="section-heading text-center mb-4">Present Positions</h3>
+                    <h3 class="section-heading text-center mb-4" style="font-weight: bold; color: #f4f7fa;">Present Positions</h3>
                     <ul class="list-unstyled text-center">
-                        <li class="mb-2"><i class="fas fa-cogs mr-2"></i>Executive Director For ZP - 2024</li>
-                        <li class="mb-2"><i class="fas fa-user-tie mr-2"></i>JCOM Coach</li>
-                        <li class="mb-2"><i class="fas fa-users mr-2"></i>JCOM Chairman - JCOM L Rajahmundry 4.O</li>
-                        <li class="mb-2"><i class="fas fa-calendar-alt mr-2"></i>Advisor - Zone Conference 2024</li>
+                        <li class="mb-3" style="font-weight: 500;">
+                            <i class="fas fa-cogs mr-2"></i>Executive Director For ZP - 2024
+                        </li>
+                        <li class="mb-3" style="font-weight: 500;">
+                            <i class="fas fa-user-tie mr-2"></i>JCOM Coach
+                        </li>
+                        <li class="mb-3" style="font-weight: 500;">
+                            <i class="fas fa-users mr-2"></i>JCOM Chairman - JCOM L Rajahmundry 4.O
+                        </li>
+                        <li class="mb-3" style="font-weight: 500;">
+                            <i class="fas fa-calendar-alt mr-2"></i>Advisor - Zone Conference 2024
+                        </li>
                     </ul>
                 </div>
             </section>
@@ -451,7 +444,7 @@ body {
 
 
      <!-- Introduction Section -->
-    <section id="about-mgm-shareeff" class="col-md-12" style="background-image: url('bg.jpg'); background-size: cover; padding: 5rem 0; position: relative;">
+    <section id="about-mgm-shareeff" class="col-md-12" style="background-image: url('bg.jpg'); background-size: cover; padding: 5rem 0; ">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
@@ -595,10 +588,9 @@ body {
             });
         });
 
-
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
-            document.querySelector('.image-container img').style.transform = `translateY(${scrollY * 0.1}px)`;
+            document.querySelector('#textContentSection').style.transform = `translateY(-${scrollY * 0.5}px)`;
         });
     </script>
     <!-- Bootstrap JS and dependencies -->
