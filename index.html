@@ -110,10 +110,14 @@
         /* Profile Section Styling */
         #profile {
             display: flex;
-            flex-direction: column; /* Default for mobile devices */
-            height: 100vh;
+            flex-direction: column; /* Default for mobile */
+            height: auto; /* Allow content to dictate height */
             margin: 0;
             padding: 0;
+            background: white;
+            width: 100%; /* Ensure full width */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-y: hidden;
         }
 
         .image-container, .text-container {
@@ -123,9 +127,13 @@
             justify-content: center;
             align-items: center;
             height: auto;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
         }
 
+        .imagetag {
+            width: 100%;  top: 0; left: 0;
+        }
         .image-container img {
             top: 0;
             left: 0;
@@ -136,6 +144,16 @@
             will-change: transform;
         }
 
+        #textContentSection {
+            background:white;
+            flex: 1; 
+            padding: 20px;
+            transform: translateY(0);
+            transition: transform 0.3s ease-out;
+            will-change: transform;
+            
+        }
+
         /* Responsive Adjustments for Large Devices */
         @media (min-width: 768px) {
             #profile {
@@ -144,6 +162,20 @@
             .image-container, .text-container {
                 flex: 1; /* Equal space for both sections */
                 height: 150vh;
+            }
+            .social-icons {
+                position: fixed;
+                top: 160px;
+                left: 0;
+                padding: 0.5%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0.5rem;
+                background: rgba(0, 0, 0, 0.5);
+            }
+            #positions{
+                margin: 50px;
             }
         }
 
@@ -404,24 +436,26 @@
     </nav>
 
    <!-- Profile Section -->
-    <section id="profile" class="container-fluid d-flex " style="background:white; height:100vh;">
+    <section id="profile" class="container-fluid d-flex">
         <!-- Image Section -->
-        <div class="image-container" style="flex: 1; margin: 0; padding: 0;">
-            <img src="profile.png" class="img-fluid" style="width: 100%;  top: 0; left: 0;" alt="MGM Shareeff">
+        <div class="image-container" >
+            <img src="profile.png" class="img-fluid imagetag" alt="MGM Shareeff">
         </div>
 
         <!-- Text Content Section -->
-        <div class="col-md-6 d-flex flex-column justify-content-center" style="background:white; flex: 1; padding: 20px;" id = "textContentSection">
-            <h2 class="text-center text-uppercase mb-4" style="font-weight: bold; color: #1d3557; ">
-                <i class="fas fa-user-tie mr-2"></i>About Me
-            </h2>
-            <p class="lead">
-                <strong>Engineer</strong> <i class="fas fa-graduation-cap mr-2" style="color: #e8c547;"></i> |
-                <strong>Entrepreneur</strong> <i class="fas fa-briefcase mr-2" style="color: #e8c547;"></i> |
-                <strong>Business & Health Coach</strong> <i class="fas fa-coach mr-2" style="color: #e8c547;"></i>
-            </p>
+        <div class="col-md-6 d-flex flex-column justify-content-center"  id = "textContentSection">
+            <div>
+                <h2 class="text-center text-uppercase mb-4" style="font-weight: bold; color: #1d3557; animation: fadeInUp 1s ease-out;">
+                    <i class="fas fa-user-tie mr-2" style="animation: zoomIn 1s ease-out;"></i>About Me
+                </h2>
+                <p class="lead" style="animation: slideIn 1s ease-out;">
+                    <strong>Engineer</strong> <i class="fas fa-graduation-cap mr-2" style="color: #e8c547; animation: fadeInLeft 1s ease-out;"></i> |
+                    <strong>Entrepreneur</strong> <i class="fas fa-briefcase mr-2" style="color: #e8c547; animation: fadeInLeft 1s ease-out;"></i> |
+                    <strong>Business & Health Coach</strong> <i class="fas fa-coach mr-2" style="color: #e8c547; animation: fadeInLeft 1s ease-out;"></i>
+                </p>
+            </div>
             <!-- Present Positions Section -->
-            <section id="positions" class="my-3 py-3  text-light rounded shadow-sm" style="background-image:linear-gradient(to right, #091b4e, rgb(89, 120, 185));">
+            <section id="positions" class=" text-light rounded shadow-sm" style="background-image:linear-gradient(to right, #091b4e, rgb(89, 120, 185));">
                 <div class="container">
                     <h3 class="section-heading text-center mb-4" style="font-weight: bold; color: #f4f7fa;">Present Positions</h3>
                     <ul class="list-unstyled text-center">
@@ -482,19 +516,19 @@
             </h2>
             <div class="skills-grid">
                 <div>
-                    <i class="fas fa-business-time" style="color: #1d3557;"></i>
+                    <i class="fas fa-business-time" style="color: #1d3557 ; font-size: 1.2rem;"></i>
                     <h3>Management</h3>
                 </div>
                 <div>
-                    <i class="fas fa-laptop-code" style="color: #1d3557;"></i>
+                    <i class="fas fa-laptop-code" style="color: #1d3557 ; font-size: 1.2rem;"></i>
                     <h3>Digital Marketing</h3>
                 </div>
                 <div>
-                    <i class="fas fa-speech-bubble" style="color: #1d3557;"></i>
+                    <i class="fas fa-speech-bubble" style="color: #1d3557 ; font-size: 1.2rem;"></i>
                     <h3>Communication</h3>
                 </div>
                 <div>
-                    <i class="fas fa-brain" style="color: #1d3557;"></i>
+                    <i class="fas fa-brain" style="color: #1d3557 ; font-size: 1.2rem;"></i>
                     <h3>Critical Thinking</h3>
                 </div>
                 <!-- <div>
@@ -514,22 +548,22 @@
             </h2>
             <div class="certifications-grid">
                 <div class="cert-item">
-                    <i class="fas fa-user-tie" style="color: #e8c547;"></i>
+                    <i class="fas fa-user-tie" style="color: #e8c547; font-size: 1.2rem;"></i>
                     <h3>JCI Senator Title</h3>
                     <p>Awarded in 2021 for leadership excellence in JCI India.</p>
                 </div>
                 <div class="cert-item">
-                    <i class="fas fa-chalkboard-teacher" style="color: #e8c547;"></i>
+                    <i class="fas fa-chalkboard-teacher" style="color: #e8c547; font-size: 1.2rem;"></i>
                     <h3>Zone Trainer</h3>
                     <p>Certified by JCI India for advanced training facilitation.</p>
                 </div>
                 <div class="cert-item">
-                    <i class="fas fa-graduation-cap" style="color: #e8c547;"></i>
+                    <i class="fas fa-graduation-cap" style="color: #e8c547; font-size: 1.2rem;"></i>
                     <h3>JCOM Coach</h3>
                     <p>Certified by JCI India for effective business coaching.</p>
                 </div>
                 <div class="cert-item">
-                    <i class="fas fa-trophy" style="color: #e8c547;"></i>
+                    <i class="fas fa-trophy" style="color: #e8c547; font-size: 1.2rem;"></i>
                     <h3>Super Coach</h3>
                     <p>Specialized in Business and Health Coaching practices.</p>
                 </div>
@@ -543,17 +577,17 @@
             <h2 style="color: #e8c547;">Get In Touch</h2>
             <div class="contact-grid">
                 <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" style="font-size: 1.2rem;"></i>
                     <h4>Email</h4>
                     <p style="color: #fff;"><a href="mailto:mgmshareeff@gmail.com">mgmshareeff@gmail.com</a></p>
                 </div>
                 <div class="contact-card">
-                    <i class="fas fa-phone-alt"></i>
+                    <i class="fas fa-phone-alt" style="font-size: 1.2rem;"></i>
                     <h4>Phone</h4>
                     <p style="color: #fff;"><a href="tel:+919885507744">+91 9885507744</a></p>
                 </div>
                 <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" style="font-size: 1.2rem;"></i>
                     <h4>Address</h4>
                     <p style="color: #fff;">46-16-49/1, Danavaipeta, Rajahmundry - 533103</p>
                 </div>
@@ -589,9 +623,22 @@
             });
         });
 
-        window.addEventListener('scroll', () => {
+        const mq = window.matchMedia("(min-width: 768px)");
+        const scrollHandler = () => {
             const scrollY = window.scrollY;
-            document.querySelector('#textContentSection').style.transform = `translateY(-${scrollY * 0.5}px)`;
+            document.querySelector('#textContentSection').style.transform = `translateY(-${scrollY * 0.1}px)`;
+        };
+        
+        if (mq.matches) {
+            window.addEventListener('scroll', scrollHandler);
+        }
+        
+        mq.addEventListener('change', (e) => {
+            if (e.matches) {
+                window.addEventListener('scroll', scrollHandler);
+            } else {
+                window.removeEventListener('scroll', scrollHandler);
+            }
         });
     </script>
     <!-- Bootstrap JS and dependencies -->
